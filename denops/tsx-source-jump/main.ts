@@ -53,7 +53,7 @@ export async function main(denops: Denops): Promise<void> {
   };
 
   await denops.cmd(
-    `command! -nargs=1 TSJOpenServer call denops#request('${denops.name}', 'listenBrowser', ["8888"])`,
+    `command! -nargs=1 TSJOpenServer call denops#request('${denops.name}', 'listenBrowser', [<q-args>])`,
   );
   await denops.cmd(
     `command! TSJCloseServer call denops#request('${denops.name}', 'closeListener', [])`,
